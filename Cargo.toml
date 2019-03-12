@@ -1,0 +1,19 @@
+[package]
+name = "hash-data"
+version = "0.1.0"
+authors = ["Odin Dutton <odindutton@gmail.com>"]
+edition = "2018"
+build = "build.rs"
+description = "A library and command line tool for identifying hashes."
+repository = "https://github.com/twe4ked/hash-data"
+license = "MIT"
+keywords = ["hash"]
+categories = ["command-line-utilities", "development-tools", "parsing"]
+
+[dependencies]
+lazy_static = "1"
+regex = "1"
+
+[build-dependencies]
+linked-hash-map = { version = "0.5", features = ["serde_impl"] }
+toml = { version = "0.5", features = ["preserve_order"] }
