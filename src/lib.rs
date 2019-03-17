@@ -127,15 +127,18 @@ use regexes::REGEXES;
 /// assert_eq!(hash_data::parse("$1$42bad211$ums.eDtzK/1711rUkRsd31"), vec!["MD5(Unix)"])
 /// ```
 pub fn parse(input: &str) -> Vec<&str> {
+    let matches = Vec::new();
+
     if input.is_empty() {
-        return Vec::new();
+        return matches;
     }
 
-    if let Some((_r, v)) = REGEXES.iter().find(|&(r, _v)| r.is_match(&input)) {
-        v.clone()
-    } else {
-        Vec::new()
-    }
+    REGEXES.iter().fold(matches, |mut a, (r, v)| {
+        if r.is_match(&input) {
+            a.append(&mut v.clone());
+        };
+        a
+    })
 }
 
 include!(concat!(env!("OUT_DIR"), "/fixture_tests.rs"));
