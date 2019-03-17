@@ -2,7 +2,7 @@
 
 //! A library and command line tool for identifying hashes.
 //!
-//! ## Examples
+//! # Examples
 //!
 //! Using the library:
 //!
