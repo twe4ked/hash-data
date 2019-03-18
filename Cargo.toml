@@ -9,6 +9,7 @@ repository = "https://github.com/twe4ked/hash-data"
 license = "MIT"
 keywords = ["hash"]
 categories = ["command-line-utilities", "development-tools", "parsing"]
+readme = "README.md"
 
 [dependencies]
 lazy_static = "1"
