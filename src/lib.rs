@@ -2,6 +2,13 @@
 
 //! A library and command line tool for identifying hashes.
 //!
+//! The main part of this crate is in the build script (`build.rs`). The build script uses the TOML
+//! files in `data/` to generate a list of regexes with their matching hash types and uses the
+//! fixtures to generate tests.
+//!
+//! The TOML files found in data are language agnostic and can be used to build similar libraries
+//! in other languages.
+//!
 //! # Examples
 //!
 //! Using the library:

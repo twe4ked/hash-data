@@ -8,6 +8,8 @@ fn main() {
     generate_fixture_tests_mod(&out_dir);
 }
 
+// Generate the "regexes" mod with a single static called REGEXES that contains regexes mapped to
+// their matching hash types.
 fn generate_regexes_mod(out_dir: &str) {
     let mut f = File::create(&Path::new(&out_dir).join("regexes.rs")).unwrap();
 
@@ -55,6 +57,7 @@ fn generate_regexes_mod(out_dir: &str) {
     .unwrap();
 }
 
+// Generates a tests mod with a test fn for each key value pair in the fixtures file.
 fn generate_fixture_tests_mod(out_dir: &str) {
     let mut f = File::create(&Path::new(&out_dir).join("fixture_tests.rs")).unwrap();
 
