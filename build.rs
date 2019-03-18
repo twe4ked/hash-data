@@ -1,5 +1,4 @@
-use linked_hash_map::LinkedHashMap;
-use std::{env, fs::File, io::prelude::*, io::Write, path::Path};
+use std::{collections::HashMap, env, fs::File, io::prelude::*, io::Write, path::Path};
 use toml;
 
 fn main() {
@@ -32,7 +31,7 @@ fn generate_regexes_mod(out_dir: &str) {
         .read_to_end(&mut contents)
         .unwrap();
 
-    let doc: LinkedHashMap<String, Vec<String>> = toml::from_slice(&contents.as_slice()).unwrap();
+    let doc: HashMap<String, Vec<String>> = toml::from_slice(&contents.as_slice()).unwrap();
 
     for (k, v) in doc {
         f.write_all(
@@ -74,7 +73,7 @@ fn generate_fixture_tests_mod(out_dir: &str) {
         .read_to_end(&mut contents)
         .unwrap();
 
-    let doc: LinkedHashMap<String, Vec<String>> = toml::from_slice(&contents.as_slice()).unwrap();
+    let doc: HashMap<String, Vec<String>> = toml::from_slice(&contents.as_slice()).unwrap();
 
     for (input, expected) in doc {
         let mut test_name = expected.clone().join("_");
