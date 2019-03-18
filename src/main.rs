@@ -7,10 +7,9 @@ fn main() {
     if args.len() == 2 {
         let matches = hash_data::parse(&args[1]);
         if matches.is_empty() {
-            eprintln!("No match");
             process::exit(1);
         } else {
-            println!("{}", matches.join(", "));
+            println!("{}", matches.join("\n"));
             process::exit(0);
         }
     } else {
