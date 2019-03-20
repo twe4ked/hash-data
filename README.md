@@ -124,4 +124,13 @@ MD5(Unix)
 - Whirlpool
 - XOR-32
 
-License: MIT
+### Thanks
+
+The regexes in this library are a modified version of the regexes found in
+[`HashData`].
+
+### License
+
+MIT
+
+[`HashData`]: https://github.com/sam-b/hashdata
